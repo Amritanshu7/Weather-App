@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	{% if api %}
+
+		{% if api == "Error" %}
+			
+			There was an Error. Please Try again.			
+		
+		{% else %}
+					<div class="jumbotron {{col}}">
+					    <h1 class="display-4">{{ quality }}</h1>
+						<p class="lead">{{api.data.city.name}}<br>Air quality {{api.data.aqi}}</p>
+					  	<p>{{aqi_range}}<br>{{desc}}</p>
+					</div>
+				
+			{% endif %}
+
+	{% endif %}
+					
+
+
+{% endblock %}
